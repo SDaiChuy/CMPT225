@@ -18,12 +18,26 @@ using std::cout;
 
 
 // methods for user inputs.
-void add(List* arr);
+void add(List* arr){
+    string user_name;
+    string user_phone;
+    string user_creditCard;
+    string user_email;
+
+    cout << "Enter a phone number: ";
+    cin >> user_phone;
+
+    cout << "Enter a name; ";
+    cin >> user_name;
+
+
+}
+/*
 void remove(List* arr);
 void search(List* arr);
 void modify(List* arr);
 void print(List* arr);
-
+*/
 int main() {
 
     // Variables declaration
@@ -42,7 +56,7 @@ int main() {
         cout << "s -> to search for a member" << endl;
         cout << "m -> to modify the record of a member" << endl;
         cout << "p -> to print all members" << endl;
-        cout << "x -> to exit\n" << endl;
+        //cout << "x -> to exit\n" << endl;
 
         
         cout << "Your choice: ";
@@ -51,14 +65,16 @@ int main() {
         input = tolower(input);
 		switch(input) {
             case 'a': add(Members); break;
-            case 'r': remove(Members); break;
-            case 's': search(Members); break;
-            case 'm': modify(Members); break;
-            case 'p': print(Members); break;
+            //case 'r': remove(Members); break;
+            //case 's': search(Members); break;
+            //case 'm': modify(Members); break;
+            //case 'p': print(Members); break;
             case 'x': cout << "\n----Bye!\n" << endl; done = true; break;
             default: cout << "Not sure what you mean! Please, try again!" << endl;
         }
         
     }
+
+
     return 0;
 }
