@@ -45,6 +45,24 @@ Member::Member(string aPhone){
     }
 }
 
+Member::Member(string aName, string aPhone, string anEmail, string aCreditCard){
+    if(aPhone.length() == SIZE_OF_PHONE_NUMBER){
+    name = aName;
+    phone = aPhone;
+    email = anEmail;
+    creditCard = aCreditCard;
+     
+    }
+    else{
+    name = aName;
+    phone = "000-000-0000";
+    email = anEmail;
+    creditCard = aCreditCard;
+
+    }
+
+}
+
 //getter functions
 string Member::getName() const{
     return name;

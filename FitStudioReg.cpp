@@ -19,10 +19,6 @@ List::List(){
 
 }
 
-Member::Member(){
-
-}
-
 // methods for user inputs.
 void add(List* arr){
     string user_name;
@@ -30,10 +26,10 @@ void add(List* arr){
     string user_creditCard;
     string user_email;
 
-    cout << "Enter a phone number: ";
+    cout << "Enter your phone number: ";
     cin >> user_phone;
 
-    cout << "Enter a name; ";
+    cout << "Enter your name: ";
     cin >> user_name;
 
     cout << "Enter your credit card information: ";
@@ -52,16 +48,9 @@ void search(List* arr);
 void modify(List* arr);
 */
 void print(List* arr){
-    string user_name = Member.getName();
-    string user_phone = Member.getPhone();
-    string user_creditCard = Member.getCreditCard();
-    string user_email = Member.getEmail();
-
-    cout << user_name;
-    cout << user_phone;
-    cout << user_creditCard;
-    cout << user_email;
+    arr->printList();
 }
+
 
 int main() {
 
@@ -81,7 +70,7 @@ int main() {
         cout << "s -> to search for a member" << endl;
         cout << "m -> to modify the record of a member" << endl;
         cout << "p -> to print all members" << endl;
-        //cout << "x -> to exit\n" << endl;
+        cout << "x -> to exit\n" << endl;
 
         
         cout << "Your choice: ";

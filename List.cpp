@@ -25,9 +25,10 @@ bool List:: insert(Member& newElement){
     if(elements == NULL){
         result = false;
     }
+
     else{
         // check to see if phone number is already in the array (same number)
-        for(int i = 0; i < getElementCount(); i ++){
+        for(unsigned int i = 0; i < getElementCount(); i ++){
             if(elements[i] == newElement){
                 result = false;
             }
@@ -52,7 +53,7 @@ bool List::remove(Member& toBeRemove){
     if(elements == NULL){
         result = false;
     }
-    for(int i = 0; i < getElementCount(); i++){
+    for(unsigned int i = 0; i < getElementCount(); i++){
         if(elements[i] == toBeRemove){
             elementCount--;
             result =  true;
@@ -63,7 +64,7 @@ bool List::remove(Member& toBeRemove){
 
 //remove all elements of the list
 void List::removeAll(){
-    for(int i = 0; i < getElementCount(); i++){
+    for(unsigned int i = 0; i < getElementCount(); i++){
         elementCount--;
     }
 }
@@ -71,16 +72,17 @@ void List::removeAll(){
 // search the list for target element in O(n) time comlexity 
 //linear search 
 Member* List::search(Member& target){
-    for(int i = 0; i < getElementCount(); i++){
+    for(unsigned int i = 0; i < getElementCount(); i++){
         if(elements[i] == target){
             return elements;
         }
     }
+    return 0;
 }
 
 // print all elements within the list linearly 
 void List::printList(){
-    for(int i = 0; i < getElementCount(); i++){
+    for(unsigned int i = 0; i < getElementCount(); i++){
         cout << elements[i];
         cout << "\n";
     }
