@@ -62,7 +62,6 @@ string Member::getCreditCard() const{
     return creditCard;
 }
 
-
 //setter functions
 void Member::setName(const string aName){
     name = aName;

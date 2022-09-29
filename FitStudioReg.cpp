@@ -15,7 +15,13 @@
 
 using std::cout;
 
+List::List(){
 
+}
+
+Member::Member(){
+
+}
 
 // methods for user inputs.
 void add(List* arr){
@@ -30,14 +36,33 @@ void add(List* arr){
     cout << "Enter a name; ";
     cin >> user_name;
 
+    cout << "Enter your credit card information: ";
+    cin >> user_creditCard;
 
+    cout << "Enter your email: ";
+    cin >> user_email;
+
+    Member temp = Member(user_name, user_phone, user_email, user_creditCard);
+
+    arr->insert(temp);
 }
 /*
 void remove(List* arr);
 void search(List* arr);
 void modify(List* arr);
-void print(List* arr);
 */
+void print(List* arr){
+    string user_name = Member.getName();
+    string user_phone = Member.getPhone();
+    string user_creditCard = Member.getCreditCard();
+    string user_email = Member.getEmail();
+
+    cout << user_name;
+    cout << user_phone;
+    cout << user_creditCard;
+    cout << user_email;
+}
+
 int main() {
 
     // Variables declaration
@@ -68,7 +93,7 @@ int main() {
             //case 'r': remove(Members); break;
             //case 's': search(Members); break;
             //case 'm': modify(Members); break;
-            //case 'p': print(Members); break;
+            case 'p': print(Members); break;
             case 'x': cout << "\n----Bye!\n" << endl; done = true; break;
             default: cout << "Not sure what you mean! Please, try again!" << endl;
         }
