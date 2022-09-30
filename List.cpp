@@ -21,17 +21,13 @@ unsigned int List:: getElementCount() const{
 
 //Add to the end of the list
 bool List:: insert(Member& newElement){
-    if(elements == NULL){
-        return false;
 
-    }
-    else{
-        //make clcout << "Working"<< endl;
-        int length = getElementCount();
-        elements[length] = newElement;
-        elementCount++;
-        return true;
-    }
+    cout << "Working"<< endl;
+    int length = getElementCount();
+    elements[length-1] = newElement;
+    elementCount++;
+    return true;
+    
 }
 
 // remove from the end of the list // check lecture 5
