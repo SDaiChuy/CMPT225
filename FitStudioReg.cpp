@@ -29,25 +29,45 @@ void add(List* arr){
     cout << "Enter your phone number: ";
     cin >> user_phone;
 
-    cout << "Enter your name: ";
-    cin >> user_name;
+    Member phoneNumber = Member(user_phone);
 
-    cout << "Enter your credit card information: ";
-    cin >> user_creditCard;
+    if(arr->search(phoneNumber) == NULL){
+        cout << "Enter your name: ";
+        cin >> user_name;
 
-    cout << "Enter your email: ";
-    cin >> user_email;
+        cout << "Enter your credit card information: ";
+        cin >> user_creditCard;
 
-    Member temp = Member(user_name, user_phone, user_email, user_creditCard);
+        cout << "Enter your email: ";
+        cin >> user_email;
 
-    arr->insert(temp);
+        Member temp = Member(user_name, user_phone, user_email, user_creditCard);
+
+        arr->insert(temp);
+
+    }
+    else{
+        cout << "That number already exist in the system" << endl; 
+    }
 }
-/*
-void remove(List* arr);
-void search(List* arr);
-void modify(List* arr);
-*/
+
+//void remove(List* arr)
+void search(List* arr){
+    string user_phone;
+
+    cout << "Enter the phone number you are searching for: ";
+    cin >> user_phone;
+
+    Member temp_phone = Member(user_phone);
+    
+    cout << arr->search(temp_phone);
+
+}
+
+//void modify(List* arr);
+
 void print(List* arr){
+
     arr->printList();
 }
 
@@ -80,7 +100,7 @@ int main() {
 		switch(input) {
             case 'a': add(Members); break;
             //case 'r': remove(Members); break;
-            //case 's': search(Members); break;
+            case 's': search(Members); break;
             //case 'm': modify(Members); break;
             case 'p': print(Members); break;
             case 'x': cout << "\n----Bye!\n" << endl; done = true; break;

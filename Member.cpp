@@ -32,18 +32,14 @@ Member::Member(){
 
 Member::Member(string aPhone){
     if(aPhone.length() == SIZE_OF_PHONE_NUMBER){
-        name;
         phone = aPhone;
-        email;
-        creditCard;
+
     }
     else{
-        name;
         phone = "000-000-0000";
-        email;
-        creditCard;
     }
 }
+
 
 Member::Member(string aName, string aPhone, string anEmail, string aCreditCard){
     if(aPhone.length() == SIZE_OF_PHONE_NUMBER){
@@ -72,22 +68,10 @@ string Member:: getPhone() const{
     return phone;
 }
 
-string Member::getEmail() const{
-    return email;
-}
-
-string Member::getCreditCard() const{
-    return creditCard;
-}
-
-//setter functions
-void Member::setName(const string aName){
-    name = aName;
-}
 
 void Member::setEmail(const string anEmail){
     email = anEmail;
-}
+}      
 
 void Member::setCreditCard(const string aCreditCard){
     creditCard = aCreditCard;

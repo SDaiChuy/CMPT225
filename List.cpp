@@ -21,29 +21,17 @@ unsigned int List:: getElementCount() const{
 
 //Add to the end of the list
 bool List:: insert(Member& newElement){
-    bool result = false;
     if(elements == NULL){
-        result = false;
-    }
+        return false;
 
+    }
     else{
-        // check to see if phone number is already in the array (same number)
-        for(unsigned int i = 0; i < getElementCount(); i ++){
-            if(elements[i] == newElement){
-                result = false;
-            }
-        }
-    }
-
-    if(elements != NULL){
+        //make clcout << "Working"<< endl;
         int length = getElementCount();
-        elements[length-1] = newElement;
-        result = true;
+        elements[length] = newElement;
         elementCount++;
+        return true;
     }
-
-    return result;
-
 }
 
 // remove from the end of the list // check lecture 5
@@ -72,12 +60,18 @@ void List::removeAll(){
 // search the list for target element in O(n) time comlexity 
 //linear search 
 Member* List::search(Member& target){
+    //cout << "element count: \n" << getElementCount();
+
     for(unsigned int i = 0; i < getElementCount(); i++){
         if(elements[i] == target){
-            return elements;
+            cout << "Element found."  << endl;
+            return &elements[i];
+
+            
         }
-    }
-    return 0;
+    }  
+    cout << "Number not found." << endl;
+    return NULL;
 }
 
 // print all elements within the list linearly 
