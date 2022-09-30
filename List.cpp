@@ -22,13 +22,15 @@ unsigned int List:: getElementCount() const{
 //Add to the end of the list
 bool List:: insert(Member& newElement){
 
-    cout << "Working"<< endl;
-    int length = getElementCount();
-    elements[length-1] = newElement;
-    elementCount++;
-    return true;
-    
-}
+        int length = getElementCount();
+        Member temp = newElement;
+        elements[length-1] = temp;
+        elementCount++;
+        cout << "Working" << endl;
+        return true;
+} 
+
+
 
 // remove from the end of the list // check lecture 5
 bool List::remove(Member& toBeRemove){
@@ -62,8 +64,6 @@ Member* List::search(Member& target){
         if(elements[i] == target){
             cout << "Element found."  << endl;
             return &elements[i];
-
-            
         }
     }  
     cout << "Number not found." << endl;

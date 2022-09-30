@@ -46,6 +46,7 @@ void add(List* arr){
         arr->insert(temp);
 
     }
+    
     else{
         cout << "That number already exist in the system" << endl; 
     }
@@ -60,7 +61,6 @@ void search(List* arr){
 
     Member temp_phone = Member(user_phone);
     
-    cout << arr->search(temp_phone);
 
 }
 
