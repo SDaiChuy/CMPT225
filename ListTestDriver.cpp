@@ -12,7 +12,7 @@ int main()
     Member empty = Member();
     arr.insert(Gab);
     arr.insert(Eric);
-    //arr.remove(Gab);
+    arr.remove(Gab);
     arr.search(Gab);
     arr.printList();
 

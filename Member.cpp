@@ -21,41 +21,25 @@
 //constructors
 
 Member::Member(){
-    name;
+    name = "To_be_named";
     phone = "000-000-0000";
-    email;
-    creditCard;
+    email = "To_get";
+    creditCard = "No_info";
 
 }
 
 //check to see if the phone number meets the precondiction
 
 Member::Member(string aPhone){
-    if(aPhone.length() == SIZE_OF_PHONE_NUMBER){
-        phone = aPhone;
-
-    }
-    else{
-        phone = "000-000-0000";
-    }
+    this->setPhone(aPhone);
 }
 
-
 Member::Member(string aName, string aPhone, string anEmail, string aCreditCard){
-    if(aPhone.length() == SIZE_OF_PHONE_NUMBER){
     name = aName;
-    phone = aPhone;
+    this->setPhone(aPhone);
     email = anEmail;
     creditCard = aCreditCard;
      
-    }
-    else{
-    name = aName;
-    phone = "000-000-0000";
-    email = anEmail;
-    creditCard = aCreditCard;
-
-    }
 
 }
 
@@ -68,17 +52,36 @@ string Member:: getPhone() const{
     return phone;
 }
 
+string Member:: getEmail() const{
+    return email;
+}
+
+string Member:: getCreditCard() const{
+    return creditCard;
+}
+
+void Member::setName(const string aName){
+    name = aName;
+    return;
+}
 
 void Member::setEmail(const string anEmail){
     email = anEmail;
+    return;
 }      
 
 void Member::setCreditCard(const string aCreditCard){
     creditCard = aCreditCard;
+    return;
 }
 
 void Member::setPhone(const string aPhone){
-    phone = getPhone();
+    if(aPhone.length() == SIZE_OF_PHONE_NUMBER){
+        phone = aPhone;
+    }
+    else{
+        phone = "000-000-0000";
+    }
 }
 
 // Overloaded Operators

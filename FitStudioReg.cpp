@@ -15,9 +15,6 @@
 
 using std::cout;
 
-List::List(){
-
-}
 
 // methods for user inputs.
 void add(List* arr){
@@ -30,29 +27,44 @@ void add(List* arr){
     cin >> user_phone;
 
     Member phoneNumber = Member(user_phone);
-
+    
     if(arr->search(phoneNumber) == NULL){
+        cout << "Please enter the following information: " << endl;
         cout << "Enter your name: ";
         cin >> user_name;
 
-        cout << "Enter your credit card information: ";
-        cin >> user_creditCard;
-
         cout << "Enter your email: ";
         cin >> user_email;
+
+        cout << "Enter your credit card information: ";
+        cin >> user_creditCard;
 
         Member temp = Member(user_name, user_phone, user_email, user_creditCard);
 
         arr->insert(temp);
 
     }
-    
     else{
         cout << "That number already exist in the system" << endl; 
     }
 }
 
-//void remove(List* arr)
+void remove(List* arr){
+    string user_phone;
+
+    cout << "Please enter your phone number: ";
+    cin >> user_phone;
+
+    Member temp = Member(user_phone);
+
+    if(arr->search(temp) != NULL){
+        arr->remove(temp);
+    }
+    else{
+        cout << "There are no mathcing numbers!";
+    }
+}
+
 void search(List* arr){
     string user_phone;
 
@@ -61,10 +73,56 @@ void search(List* arr){
 
     Member temp_phone = Member(user_phone);
     
+    arr->search(temp_phone);
+
 
 }
 
-//void modify(List* arr);
+void modify(List* arr){
+    string user_phone;
+    string user_name;
+    string user_creditCard;
+    string user_email;
+
+
+    cout << "Please enter the phone number of the member you wish to modify: ";
+    cin >> user_phone;
+
+    Member temp_number = Member(user_phone);
+
+    cout << *arr->search(temp_number) << endl;
+    
+    if(arr->search(temp_number) != NULL){
+
+        cout << "Enter the new information below" << endl;
+        
+        cout <<"Enter a name: ";
+        cin >> user_name;
+        
+        cout << "Enter an email: ";
+        cin >> user_email;
+
+        cout << "Enter your credit card: ";
+        cin >> user_creditCard;
+
+        temp_number.setName(user_name);
+        temp_number.setEmail(user_email);
+        temp_number.setCreditCard(user_creditCard);
+
+    
+
+    }
+    
+    else{
+        cout << "There is no such member." << endl;
+    }
+
+    cout << "After" << endl;
+
+    cout << *arr->search(temp_number) << endl;
+
+
+}
 
 void print(List* arr){
 
@@ -78,7 +136,6 @@ int main() {
     List* Members = new List();
     bool done = false;
     char input = 0;
-
 
     // Keep going until the user exits
     while (not done) {
@@ -99,9 +156,9 @@ int main() {
         input = tolower(input);
 		switch(input) {
             case 'a': add(Members); break;
-            //case 'r': remove(Members); break;
+            case 'r': remove(Members); break;
             case 's': search(Members); break;
-            //case 'm': modify(Members); break;
+            case 'm': modify(Members); break;
             case 'p': print(Members); break;
             case 'x': cout << "\n----Bye!\n" << endl; done = true; break;
             default: cout << "Not sure what you mean! Please, try again!" << endl;
