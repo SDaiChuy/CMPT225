@@ -106,8 +106,10 @@ void List::removeAll(){
 // search the list for target element in O(n) time comlexity 
 //linear search 
 Member* List::search(Member& target){
+    //testing purpose
     //cout << "element count: \n" << getElementCount();
 
+    //iterate throught the array to find the matching target
     for(unsigned int i = 0; i < getElementCount(); i++){
         if(elements[i] == target){
             cout << "Member has been found!"  << endl;

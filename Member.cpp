@@ -76,7 +76,7 @@ void Member::setCreditCard(const string aCreditCard){
 }
 
 void Member::setPhone(const string aPhone){
-    if(aPhone.length() == SIZE_OF_PHONE_NUMBER){
+    if(aPhone.length() == SIZE_OF_PHONE_NUMBER && aPhone[3] == '-' && aPhone[7] == '-'){
         phone = aPhone;
     }
     else{

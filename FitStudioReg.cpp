@@ -57,6 +57,7 @@ void remove(List* arr){
 
     Member temp = Member(user_phone);
 
+    // search to see if the member matches the system
     if(arr->search(temp) != NULL){
         arr->remove(temp);
     }
@@ -84,7 +85,7 @@ void modify(List* arr){
     string user_creditCard;
     string user_email;
 
-
+    // ask for the number of the member
     cout << "Please enter the phone number of the member you wish to modify: ";
     cin >> user_phone;
 
@@ -92,6 +93,7 @@ void modify(List* arr){
 
     cout << *arr->search(temp_number) << endl;
     
+    //checking to see of there is a member
     if(arr->search(temp_number) != NULL){
 
         cout << "Enter the new information below" << endl;
@@ -108,7 +110,6 @@ void modify(List* arr){
         temp_number.setName(user_name);
         temp_number.setEmail(user_email);
         temp_number.setCreditCard(user_creditCard);
-
     
 
     }
@@ -117,11 +118,8 @@ void modify(List* arr){
         cout << "There is no such member." << endl;
     }
 
-    cout << "After" << endl;
 
-    cout << *arr->search(temp_number) << endl;
-
-
+    //cout << *arr->search(temp_member) << endl;
 }
 
 void print(List* arr){
