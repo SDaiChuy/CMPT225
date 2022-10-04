@@ -70,7 +70,6 @@ bool List::remove(Member& toBeRemove){
             for(unsigned int i = 0; i < elementCount; i++ ){
                 if(elements[i] == toBeRemove){
                     position = i;
-                    cout << "i: " << i << endl;
                 }
             }
         // for the case that the position is 0
@@ -112,11 +111,9 @@ Member* List::search(Member& target){
     //iterate throught the array to find the matching target
     for(unsigned int i = 0; i < getElementCount(); i++){
         if(elements[i] == target){
-            cout << "Member has been found!"  << endl;
             return &elements[i];
         }
     }  
-    cout << "Member was not found." << endl;
     return NULL;
 }
 

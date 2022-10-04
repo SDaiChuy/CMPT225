@@ -74,7 +74,13 @@ void search(List* arr){
 
     Member temp_phone = Member(user_phone);
     
-    arr->search(temp_phone);
+    if(arr->search(temp_phone) == NULL){
+        cout << "No member was found!" << endl;
+    }
+    
+    else{
+    cout << "Member was found!" << endl;
+    }
 
 
 }
