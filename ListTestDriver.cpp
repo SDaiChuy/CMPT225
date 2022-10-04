@@ -76,6 +76,7 @@ int main() {
     Member theMember5("778-251-8313");
     if ( member->insert(theMember5) ) cout << "Actual Result: insert is successful." << endl;
     else cout << "Actual Result: insert is unsuccessful." << endl;
+    cout << endl;
 
     // Test case 7:
     // Printing out the list
